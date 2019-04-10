@@ -13,3 +13,12 @@ For python 2
 `sudo apt install surfraw surfraw-extra xclip python-tk`
 
 install with `pip install .` or `pip install search-cli`
+
+Programs:
+
+ * `search` or `sr`: Search from the command line with a backoff to search for what ever is on your clipboard if you don't type anything
+ * `search_highlighted`: Search for the highlighted span.
+ * `search_gui`: Create a text input box and search for entered text with `<Enter>`
+ * `search_gui_highlighted`: Same as above but seeded with the currently highlighted text.
+
+`search_highlighted`, `search_gui`, and `search_gui_highlighted` are ideal for keybinding.
