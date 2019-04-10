@@ -69,7 +69,7 @@ setup(
             'search=search.search:main',
             'sr=search.search:main',
             'search_highlighted=search.search:search_highlighted',
-            'search_gui=search.search_gui:gui_search'
+            'search_gui=search.search_gui:search_gui',
         ],
     },
     classifiers={
