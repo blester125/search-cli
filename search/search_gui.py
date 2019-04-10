@@ -3,6 +3,7 @@ try:
 except ImportError:
     from Tkinter import *
 
+import sys
 from search.search import get_highlighted, search, get_engine
 
 def search_gui():
@@ -24,7 +25,8 @@ def search_gui():
         close(event)
 
     def close(event):
-        exit()
+        master.destroy()
+        sys.exit()
 
     e.bind("<Return>", callback)
     e.bind("<Escape>", close)
