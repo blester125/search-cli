@@ -22,3 +22,5 @@ Programs:
  * `search_gui_highlighted`: Same as above but seeded with the currently highlighted text.
 
 `search_highlighted`, `search_gui`, and `search_gui_highlighted` are ideal for keybinding.
+
+When the search bar loses focus (you click away) it will automatically close. If you don't like this behavior you can set `SR_CLOSE_LOSS_FOCUS` to `no` to stop it.

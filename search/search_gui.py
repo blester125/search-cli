@@ -3,6 +3,7 @@ try:
 except ImportError:
     from Tkinter import *
 
+import os
 import sys
 from search.search import get_highlighted, search, get_engine
 
@@ -30,7 +31,8 @@ def search_gui_highlighted():
 
     e.bind("<Return>", callback)
     e.bind("<Escape>", close)
-    master.bind("<FocusOut>", close)
+    if os.getenv('SR_CLOSE_LOSS_FOCUS', 'yes') == 'yes':
+        master.bind("<FocusOut>", close)
 
     e.focus()
     mainloop()
@@ -57,7 +59,8 @@ def search_gui():
 
     e.bind("<Return>", callback)
     e.bind("<Escape>", close)
-    master.bind("<FocusOut>", close)
+    if os.getenv('SR_CLOSE_LOSS_FOCUS', 'yes') == 'yes':
+        master.bind("<FocusOut>", close)
 
     e.focus()
     mainloop()
