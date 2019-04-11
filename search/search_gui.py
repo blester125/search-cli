@@ -30,6 +30,7 @@ def search_gui_highlighted():
 
     e.bind("<Return>", callback)
     e.bind("<Escape>", close)
+    master.bind("<FocusOut>", close)
 
     e.focus()
     mainloop()
@@ -56,6 +57,7 @@ def search_gui():
 
     e.bind("<Return>", callback)
     e.bind("<Escape>", close)
+    master.bind("<FocusOut>", close)
 
     e.focus()
     mainloop()
