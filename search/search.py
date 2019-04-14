@@ -2,6 +2,7 @@
 
 import os
 import argparse
+import platform
 from subprocess import call, check_output, PIPE
 
 
@@ -9,7 +10,7 @@ def get_engine(default, ENV_KEY="SRENGINE"):
     return os.environ.get(ENV_KEY, default)
 
 
-def get_clipboard(board="c"):
+def get_clipboard_linux(board="c"):
     try:
         return check_output(
             ["xclip", "-sel", board, "-o"],
@@ -21,13 +22,37 @@ def get_clipboard(board="c"):
 
 
 def get_highlighted():
-    return get_clipboard(board="p")
+    return get_clipboard_linux(board="p")
+
+	
+def get_clipboard():
+	if platform.system() == 'Windows':
+		return get_clipboard_win()
+	return get_clipboard_linux()
 
 
-def search(engine, query):
+def get_clipboard_win():
+	import pyperclip
+	return pyperclip.paste().split()
+
+
+def search_linux(engine, query):
     cmd = ["surfraw", engine]
     cmd.extend(query)
     call(cmd)
+
+
+def search_win(query):
+	query = "+".join(query)
+	cmd = ['start', 'www.google.com/search?q={}'.format(query)]
+	call(" ".join(cmd), shell=True)
+
+	
+def search(engine, query):
+	if platform.system() == 'Windows':
+		search_win(query)
+	else:
+		search_linux(engine, query)
 
 
 def main():
