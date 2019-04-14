@@ -22,3 +22,16 @@ Programs:
  * `search_gui_highlighted`: Same as above but seeded with the currently highlighted text.
 
 `search_highlighted`, `search_gui`, and `search_gui_highlighted` are ideal for keybinding.
+
+
+Windows:
+
+On windows only searching with google is supported. To run you will need python installed
+and the entry point scripts exectuable. This normally involes adding paths like the
+following to your path (`control panel` -> `System and Security` -> `System` -> `Advanced system settings` -> `Environment Variables`)
+
+ C:\Users\LENOVO\AppData\Local\Programs\Python\Python37-32\Scripts
+ C:\Users\LENOVO\AppData\Local\Programs\Python\Python37-32
+ 
+On windows I can't get the selected text the same way I can on Linux so there are
+`autoHotKey` scripts in the `win` folder than can simulate this behavior.

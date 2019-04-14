@@ -61,6 +61,7 @@ setup(
     ],
     extras_require={
         'test': ['pytest'],
+        'win': ['pyperclip'],
     },
     keywords=[],
     ext_modules=ext_modules,
@@ -70,7 +71,7 @@ setup(
             'sr=search.search:main',
             'search_highlighted=search.search:search_highlighted',
             'search_gui=search.search_gui:search_gui',
-            'search_gui_highlighted=search.search_gui:search_gui_highlighted',
+            'search_gui_highlighted=search.search_gui:main',
         ],
     },
     classifiers={
