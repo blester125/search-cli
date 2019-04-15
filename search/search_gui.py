@@ -52,7 +52,7 @@ def main():
     parser = argparse.ArgumentParser("Search the web.")
     parser.add_argument("query", nargs="*", help="What to seed the search bar with")
     args = parser.parse_args()
-    args.query = args.query if args.query is not None else get_highlighted()
+    args.query = args.query if args.query else get_highlighted()
     search_gui_highlighted(args.query)
 
 
